@@ -159,6 +159,12 @@ pub fn is(_stream: Stream) -> bool {
     false
 }
 
+/// returns true if this is a tty
+#[cfg(target_os = "switch")]
+pub fn is(_stream: Stream) -> bool {
+    true
+}
+
 #[cfg(test)]
 mod tests {
     use super::{is, Stream};
